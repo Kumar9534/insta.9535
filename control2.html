@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control</title>
+    <style>
+        body{
+            background-color:rgb(139, 193, 223)
+        }
+        .textbox {position:relative;
+            text-align:center;
+        top:200px;
+    }
+
+        .textbox input{
+            width:260px;
+            height:45px;
+            border-radius:6px;
+            background:transparent;
+            border:2px solid #200710;
+            padding:0 20px 056px;
+            font-size:17px;
+            font-family:inherit;
+            color:rgba(51, 17, 17, 0.96);
+            outline:none;
+            text-align:center;
+            
+            
+
+        }
+        .textbox input:focus ~.icon{
+            opacity:1;
+            font-size:20px;
+        }
+        .textbox input::placeholder{
+            color:rgba(17, 7, 7, 0.5);
+        }
+        .textbox input:valid{
+            border-color: color #04261d;
+        }
+
+        .textbox .aster {
+            position:absolute;
+            top:50px;
+            right:30%;
+            font-size:22px;
+            pointer-events:none;
+            color:#df2666;
+
+        }
+        .textbox .icon{
+            position:absolute;
+            top:50%;
+            left:30%;
+            margin-top:-12px;
+            opacity:0.5;
+        }
+
+        .textbox :is(input:valid)
+        ~ .aster {opacity: 0;}
+        
+        @keyframes shake {
+            0%,100% {translate:0;}
+            25% {translate:8px 0;}
+            75% {translate: -8px 0;}
+
+        }
+        .textbox input:valid,.textbox input:valid
+        ~ :is(.aster,.icon){
+            animation:none;
+        }
+        .textbox
+        :is(input, .icon, .aster){
+            animation:
+            shake 0.1635s 0s 3;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="textbox">
+        <input required type="text" name="textbox" placeholder="First Name"spellcheck="false">
+        <span class="icon"><i class="fa-brands fa-facebook"></i></span>
+        <span class="aster">*</span>
+    </div>
+</body>
+</html>
